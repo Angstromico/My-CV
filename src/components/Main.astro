@@ -1,0 +1,62 @@
+---
+interface Props {
+  name: {name: string, lastName: string}
+  profession: string
+  download: string
+  profile: string
+  description: string
+  education: string
+  educationData: { title: string; academy: string, year: number | string }[]
+  skillsTitle: string
+  showEducation: { less: string; more: string }
+  skills: string[]
+  experience: string
+  experiences: {name: string, description: string, company: string}[]
+  referenses: string
+  referensesInfo: {name: string, title: string, phone: string, mail: string}[],
+  interest: string
+  herInterests: { name: string; icon: string }[]
+}
+
+import {
+  Home,
+  Social,
+  Profile,
+  Education,
+  Skills,
+  Experience,
+  References,
+  Interests,
+  ScrollTop,
+  ThemeBtn
+} from './index'
+
+const {name, profession, download, profile, description, education, educationData, skillsTitle, showEducation, skills, experience, experiences, referenses, referensesInfo, interest, herInterests} = Astro.props
+---
+<div class='resume' id='area-cv'>
+  <div class='resume__left'>
+    <Home name={name} profession={profession} download={download} />
+
+    <ThemeBtn client:visible />
+
+    <Social />
+
+    <Profile profile={profile} description={description} />
+    <Education client:visible education={education} educationData={educationData} showEducation={showEducation} />
+
+    <Skills skillsTitle={skillsTitle} skills={skills} />
+  </div>
+
+  <div class='resume__right'>
+      <Experience experience={experience} experiences={experiences} />
+
+      <References referense={referenses} referensesInfo={referensesInfo} />
+
+      <Interests client:visible interest={interest} herInterests={herInterests} />
+  </div>
+ 
+  <ScrollTop client:visible />
+  
+</div>
+
+

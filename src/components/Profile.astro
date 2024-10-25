@@ -1,0 +1,14 @@
+---
+interface Props {
+  profile: string
+  description: string
+}
+
+const {profile, description} = Astro.props
+---
+
+<section class='profile section' id='profile'>
+ <h2 class="section-title">{profile}</h2>
+ <p class="profile__description">{description}</p>
+</section>
+

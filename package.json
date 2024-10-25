@@ -1,0 +1,38 @@
+{
+  "name": "astro-cv",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/netlify": "^5.2.0",
+    "@astrojs/react": "^3.1.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "@nanostores/react": "^0.7.2",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "astro": "^4.5.16",
+    "astro-cv": "file:",
+    "html2pdf.js": "^0.10.1",
+    "nanostores": "^0.10.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^7.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.33.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "sass": "^1.75.0"
+  }
+}

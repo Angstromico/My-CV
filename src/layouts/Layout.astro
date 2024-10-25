@@ -1,0 +1,549 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import HeaderReact from '../components/Header.tsx'
+import LanguagePicker from '../components/LanguagePicker.astro'
+interface Props {
+	title: string;
+}
+import CvDanye from '../assets/cvdanye.png'
+
+const { title } = Astro.props
+const lang = getLangFromUrl(Astro.url)
+
+
+const t = useTranslations(lang)
+
+const linksInfo = [ {icon: 'user-circle', title: t('nav.profile'), link: 'profile'}, {icon: 'book', title: t('nav.education'), link: 'education'}, {icon: 'receipt', title: t('nav.skills'), link: 'skills'}, {icon: 'briefcase', title: t('nav.experience'), link: 'experience'}, {icon: 'award', title: t('nav.certificates'), link: 'certificates'}, {icon: 'link-external', title: t('nav.references'), link: 'references'}]
+
+const mainUrl = Astro.url.href
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={t('description')} />
+    <meta property="og:url" content={mainUrl} />
+    <meta property="og:description" content={t('description')} />
+		<meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content={CvDanye.src} />
+    <meta property="og:type" content="website" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={mainUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={t('profile.description')} />
+    <meta property="twitter:image" content={CvDanye.src} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <link rel="canonical" href={mainUrl}>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    <ViewTransitions />
+	</head>
+	<body>
+    <LanguagePicker />
+    <HeaderReact client:visible linksInfo={linksInfo} />
+		<slot />
+	</body>
+</html>
+
+
+
+<style is:global lang="scss">
+	/*===== GOOGLE FONTS =====*/
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  
+  /*========== Colors ==========*/
+  --title-color: #0B0A0A;
+  --text-color: #403A3A;
+  --text-color-light: #707070;
+  --container-color: #FAFAFA;
+  --container-color-alt: #F0EFEF;
+  --body-color: #FCFCFC;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+  --variableWeird: @apply text-3xl;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes ==========*/
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Globals */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.deskdown {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  @apply hidden absolute left-8 top-10 dark:text-gray-200 cursor-pointer;
+}
+
+.deskdown:hover {
+  @apply dark:hover:text-gray-100;
+}
+
+/*========== Variables Dark theme ==========*/
+.body.dark {
+  color-scheme: dark;
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme {
+  color: var(--text-color);
+  @apply absolute right-12 md:right-8 flex top-32 md:top-8 text-xl dark:text-gray-200 cursor-pointer;
+}
+.change-theme:hover {
+  color: var(--title-color);
+  @apply dark:text-gray-100;
+}
+
+/*========== Font size variables to scale cv ==========*/
+.scale-cv {
+  --h1-font-size: 1.4rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 0.9rem;
+  --normal-font-size: .838rem;
+  --small-font-size: .775rem;
+  --smaller-font-size: .713rem;
+  max-width: 1595px;
+  @apply mx-auto;
+}
+.scale-cv .section {
+  padding: 1.5rem 0 0.8rem;
+}
+
+.scale-cv .section-title {
+  margin-bottom: 0.75rem;
+}
+.scale-cv .resume__left, .scale-cv .resume__right {
+  padding: 0 1rem;
+}
+.scale-cv .home__img {
+  width: 90px;
+  height: 90px;
+}
+
+.scale-cv .home__container {
+  gap: 1.5rem;
+}
+.scale-cv .home__data {
+  gap: 0.25rem;
+}
+.scale-cv .home__address, .scale-cv .social__container {
+  gap: 0.75rem;
+}
+.scale-cv {
+  .home__icon, .social__icon, .interests__icon {
+    font-size: 1rem;
+  }
+  .education__container, .experience__container, .certificate__container {
+    gap: 1rem;
+  }
+  .education__time, .experience__time {
+    padding-right: 0.5rem;
+  }
+  .education__rounder, .experience__rounder {
+    width: 11px;
+    height: 11px;
+    margin-top: 0.22rem;
+  }
+  .education__line, .experience__line {
+    width: 1px;
+    transform: translate(5px, 0);
+  }
+  .education__data, .experience__data {
+    gap: 0.25rem;
+  }
+  .skills__name {
+    margin-bottom: var(--mb-1);
+  }
+  .interests__container {
+    column-gap: 2.5rem;
+  }
+}
+
+/*========== Generate PDF button ==========*/
+
+
+/*========== Classes modified to reduce size and print on A4 sheet ==========*/
+
+
+/*========== CLASS CSS ==========*/
+.section {
+  padding: 1.5rem 0;
+}
+.section-title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  text-align: center;
+  margin-bottom: var(--mb-3);
+}
+
+
+/*========== LAYOUT ==========*/
+
+body {
+		font-family: var(--body-font);
+    margin: 0 0 var(--header-height) 0;
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    @apply dark:text-[#bfbfbf] dark:bg-[#2b2b2b];
+}
+h1, h2, h3 {
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+  font-weight: var(--font-medium);
+}
+
+.bd-container {
+  @apply px-3 w-full;
+}
+
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.l-header {
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  @apply w-screen fixed bottom-0 left-0 dark:bg-[#2b2b2b];
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+  transition: 3s;
+}
+
+/*========== NAV ==========*/
+.nav {
+  height: var(--header-height);
+  @apply flex justify-between items-center;
+}
+
+
+.nav__menu {
+    padding: 2rem 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    @apply fixed left-0 w-full bottom-[-100%] md:bottom-12 hidden dark:bg-[#2b2b2b];
+    border-radius: 1rem 1rem 0 0;
+    z-index: var(--z-fixed);
+    transition: 0.3s ease-in-out;
+}
+
+
+.nav__logo, .nav__toggle {
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+  font-weight: var(--font-medium);
+}
+
+.nav__logo {
+  @apply flex gap-2;
+}
+
+.nav__toggle {
+  font-size: 1.2rem;
+  @apply cursor-pointer mr-5;
+}
+.nav__item {
+  @apply text-center grid grid-cols-3 gap-8 md:gap-4 md:justify-center;
+}
+
+
+.nav__link {
+  @apply flex gap-2 flex-col justify-center items-center;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  font-weight: var(--font-medium);
+}
+.nav__link:hover {
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+}
+.nav__icon {
+  @apply text-xl;
+  margin-bottom: var(--mb-1);
+}
+/* Show menu */
+.nav__menu.show-menu {
+  @apply bottom-12 block;
+}
+
+
+/* Active menu link */
+.active-link {
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+}
+
+/*========== HOME ==========*/
+.home {
+  @apply relative;
+}
+
+.home__container {
+  gap: 3rem;
+}
+
+.home__data {
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.home__img {
+  width: 120px;
+  border-radius: 50%;
+  justify-self: center;
+  margin-bottom: var(--mb-1);
+}
+
+.home__title {
+  font-size: var(--h1-font-size);
+}
+
+.home__profession {
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.home__address {
+  gap: 1rem;
+}
+
+.home__information {
+  @apply flex items-center gap-2;
+  font-size: var(--small-font-size);
+}
+
+.home__icon {
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+
+.home__button-mobile {
+  display: inline-block;
+  border: 2px solid var(--text-color);
+  @apply dark:border-[#bfbfbf];
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  transition: 0.3s;
+  font-weight: var(--font-medium);
+  margin-top: var(--mb-3);
+}
+
+.home__button-mobile:hover {
+  background-color: var(--text-color);
+  color: var(--container-color);
+  @apply dark:bg-[#bfbfbf] dark:text-[#212121];
+}
+
+/*========== SOCIAL ==========*/
+.social__container {
+  grid-template-columns: max-content;
+  gap: 1rem;
+}
+
+.social__link {
+  display: inline-flex;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  @apply items-center dark:text-[#bfbfbf];
+}
+
+.social__link:hover {
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+}
+
+.social__icon {
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+
+/*========== PROFILE ==========*/
+.profile__description {
+  @apply text-center;
+}
+
+/*========== EDUCATION AND EXPERIENCE ==========*/
+.experience__content {
+  @apply flex;
+}
+.education__time, .experience__time {
+  @apply pr-4;
+}
+.education__rounder, .experience__rounder {
+  @apply relative block w-4 h-4;
+  background-color: var(--text-color-light);
+  border-radius: 50%;
+  margin-top: 0.25rem;
+}
+.education__line, .experience__line {
+  @apply block w-[2px];
+  height: 110%;
+  background-color: var(--text-color-light);
+  transform: translate(7px, 0);
+}
+.education__data, .experience__data {
+  @apply gap-2;
+}
+.education__title, .experience__title {
+  font-size: var(--h3-font-size);
+}
+.education__studies, .experience__company {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  @apply dark:text-[#f2f2f2];
+}
+.education__year, .experience__description {
+  font-size: var(--small-font-size);
+}
+
+
+/*========== SKILLS AND LANGUAGES ==========*/
+.skills__content {
+  @apply sm:grid-cols-2 gap-0;
+}
+.skills__name {
+  @apply flex items-center;
+  margin-bottom: var(--mb-3);
+}
+.skills__circle {
+  background-color: var(--text-color);
+  @apply inline-block w-[5px] h-[5px] rounded-full dark:bg-[#bfbfbf];
+  margin-right: 0.75rem;
+}
+/*========== CERTIFICATES ==========*/
+
+
+/*========== REFERENCES ==========*/
+.referenses__content {
+  gap: 0.25rem;
+}
+.referenses__subtitle {
+  color: var(--text-color-light);
+}
+.referenses__subtitle, .referenses__contact {
+  font-size: var(--smaller-font-size);
+}
+.referenses__title {
+  font-size: var(--h3-font-size);
+}
+/*========== INTERESTS ==========*/
+.interests__container {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--mb-2);
+} 
+.interests__content {
+  @apply flex flex-col items-center;
+}
+.interests__icon {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.25rem;
+}
+/* Scroll top */
+.scrolltop {
+  @apply fixed right-4 bottom-20 flex justify-center items-center p-1 dark:bg-[#181616];
+  background-color: var(--container-color-alt);
+  border-radius: 0.4rem;
+  z-index: 200;
+  transition: 0.4s;
+  visibility: hidden;
+}
+.scrolltop__icon {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  @apply dark:text-[#bfbfbf];
+}
+.show-scroll {
+  visibility: visible;
+}
+/*========== MEDIA QUERIES ==========*/
+/* For small devices, menu two columns */
+@media screen and (max-width: 350px) {
+  .nav__item {
+    @apply grid grid-cols-2;
+    gap: 1rem 0.5rem;
+  }
+}
+
+
+/* Classes modified for large screen size */
+@media screen and (min-width: 968px) {
+  body {
+    margin: 3rem 0;
+  }
+  .bd-container {
+    @apply mx-auto;
+  }
+  .resume {
+    grid-template-columns: 0.5fr 1fr;
+    background-color: var(--container-color);
+    @apply grid dark:bg-[#212121];
+    box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+  }
+  .resume__left {
+    background-color: var(--container-color-alt);
+    @apply dark:bg-[#181616] relative;
+  }
+  .resume__left, .resume__right {
+    padding: 0 1.5rem;
+  }
+  .section-title, .profile__description {
+    text-align: initial;
+  }
+  .home__container {
+    gap: 1.5rem;
+  }
+  .home__button-mobile.start {
+    margin-top: 3rem;
+    margin-left: -6rem;
+  }
+  .referenses__container {
+    @apply grid-cols-2;
+  }
+  .interests__container {
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 3.5rem;
+  }
+  .downbtn {
+    @apply hidden;
+  }
+  .deskdown {
+    @apply inline-block;
+  }
+}
+</style>

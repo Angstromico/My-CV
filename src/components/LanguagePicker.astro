@@ -1,0 +1,57 @@
+--- 
+import { languages } from '../i18n/ui' 
+import LangContainer from './LangContainer';
+--- 
+
+<LangContainer languages={languages} client:visible> 
+   
+
+
+<style is:global>  
+  .language-selector {
+    @apply fixed top-4 right-[2%] hidden md:flex items-center space-x-4 text-white dark:text-black z-50  font-bold;
+  }
+
+  .language-selector.scroll li a, .language-selector-mobile.scroll li a {
+    @apply bg-opacity-50;
+  }
+
+  .language-selector li, .language-selector-mobile ul li {
+    @apply relative;
+  }
+
+  .language-selector li a, .language-selector-mobile ul li a {
+    @apply block py-2 px-4 rounded-full bg-gray-700 dark:bg-gray-200 hover:bg-gray-600 dark:hover:bg-gray-100 transition-colors;
+  }
+
+  .language-selector li a.active, .language-selector-mobile ul li a.active {
+    @apply bg-blue-600 dark:bg-yellow-600 hover:bg-blue-700 dark:hover:bg-yellow-700;
+  }
+
+  .language-selector li a.active::after, .language-selector-mobile ul li a.active::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full bg-white dark:bg-black;
+  }
+
+/* Mobile specific styles */
+  .language-selector-mobile {
+    /* Adjust styles for mobile layout */
+    @apply flex md:hidden flex-col gap-4 top-4 fixed right-[2%] z-20 text-white font-bold dark:text-black;
+    justify-content: space-between; /* Distribute items horizontally */
+    padding: 10px; /* Add some padding for touch targets */
+  }
+
+  .language-selector-mobile > ul > li {
+    /* Adjust styles for list items on mobile */
+    display: block; /* Make items appear side-by-side */
+    margin: 0 10px; /* Add some margin for spacing */
+    @apply my-4;
+  }
+
+  .language-selector-mobile > ul > li > a {
+    /* Adjust styles for links on mobile */
+    @apply py-1 px-2;
+    font-size: 12px; /* Adjust font size for better readability */
+  }
+  /* Why I can't see the mobile element here? */
+</style>

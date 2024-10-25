@@ -1,0 +1,29 @@
+---
+interface Props {
+  referense: string
+  referensesInfo: {name: string, title: string, phone: string, mail: string}[]
+}
+
+const {referense, referensesInfo} = Astro.props
+---
+
+<section class='references section' id='references'>
+ <h2 class="section-title">{referense}</h2>
+
+ <div class="referenses__container bd-grid">
+  {referensesInfo.map(ref => {
+   const { name, title, phone, mail } = ref
+
+   return <div class="referenses__content bd-grid">
+   <span class="referenses__subtitle">{title}</span>
+   <h3 class="referenses__title">{name}</h3>
+   <ul class="referenses__contact">
+    <li>Phone: {phone}</li>
+    <li>Email: {mail}</li>
+   </ul>
+  </div>
+  })}
+ </div>
+</section>
+
+
