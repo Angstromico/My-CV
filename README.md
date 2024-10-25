@@ -10,6 +10,6 @@ npm create astro@latest -- --template basics
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://raw.githubusercontent.com/Angstromico/danyelis-cv/main/src/assets/cvdanye.png)
+![just-the-basics](https://raw.githubusercontent.com/Angstromico/My-CV/refs/heads/main/src/assets/cvdanye.png)
 
 ## 🚀 Manuels Curriculum Astro
