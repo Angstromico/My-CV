@@ -19,7 +19,7 @@ export const ui = {
     'home.download': 'Download CV',
     profile: 'Profile',
     'profile.description':
-      'Highly motivated Full Stack Developer with expertise in JavaScript and PHP, specializing in building dynamic and efficient web applications. Possesses extensive experience in both front-end and back-end development, with a strong focus on user-centric design, RESTful APIs, and scalable architecture. Eager to leverage expertise in modern web technologies to contribute to a fast-paced, innovation-driven environment.',
+      'Highly motivated Full Stack Developer with expertise in JavaScript and Strapi, specializing in building dynamic and efficient web applications. Possesses extensive experience in both front-end and back-end development, with a strong focus on user-centric design, RESTful APIs, and scalable architecture. Eager to leverage expertise in modern web technologies to contribute to a fast-paced, innovation-driven environment.',
     education: 'Education',
     'education.title': 'Industrial Materials Engineering',
     'education.college': 'Territorial Polytechnic University of Valencia',
@@ -27,7 +27,7 @@ export const ui = {
     'education.degree': 'Full Web Development with HTML5, CSS3, JS AJAX PHP and MySQL',
     'education.secondDegree': 'Complete SQL and Databases Bootcamp',
     'education.thirdDegree': 'Warehouse and Inventory Control',
-    'education.fourthDegree': 'Next.js 15 & React - The Complete Guide',
+    'education.fourthDegree': 'Next.js & React - The Complete Guide',
     'education.fifthDegree': 'Complete NodeJS Developer (GraphQL, MongoDB, + more)',
     'education.showLess': 'Show Less',
     'education.showMore': 'Show More',
@@ -42,12 +42,12 @@ export const ui = {
     'experience.title': 'Full Stack Developer',
     'experience.description':
       'In my previous role as a Full Stack Developer, I was responsible for designing, developing, and maintaining both client- and server-side applications, implementing robust solutions to enhance functionality and improve user experience. My work involved utilizing JavaScript and PHP technologies to build dynamic interfaces and ensure seamless integration with backend services.',
-    'experience.title2': 'Wordpress Themes and Plugins Developer',
+    'experience.title2': 'Full Stack Developer in Vue and Laravel',
     'experience.description2':
-      'During my time as a WordPress Developer specializing in Themes and Plugins, I worked in a fast-paced environment where customization and user-focused design were essential. I developed and customized themes and plugins to deliver tailored solutions, ensuring optimal functionality and an engaging user experience.',
-    'experience.title3': 'Freelancer',
+      'During my time working with Laravel, Vue, and Tailwind CSS, I was part of a dynamic development environment focused on building responsive, scalable, and interactive web applications. I implemented backend logic using Laravel’s robust features while creating intuitive and reactive user interfaces with Vue. Tailwind CSS allowed me to craft clean, consistent, and highly customizable designs, ensuring both performance and a seamless user experience.',
+    'experience.title3': 'Full Stack Developer in MERN',
     'experience.description3':
-      'As a Freelance Full Stack Developer, I’ve worked across a variety of technologies, including React, Astro, Next.js, Node with Express, and WordPress, to deliver tailored solutions for diverse client needs. My projects ranged from building dynamic landing pages to developing robust backend systems, each focused on clean, scalable code and an intuitive user experience.',
+      'During my experience working with the MERN stack, TypeScript, and Redux, I contributed to the development of full-stack applications with a strong emphasis on type safety, maintainability, and performance. I built scalable APIs with Node.js and Express, developed dynamic frontend interfaces using React with Redux for state management, and ensured reliability through end-to-end workflows managed via Azure DevOps. This setup allowed for continuous integration and deployment, efficient team collaboration, and the delivery of robust, production-ready solutions.',
     referenses: 'References',
     'referenses.title': 'Web Developer',
     'referenses.title2': 'Electronics Engineer',
@@ -72,14 +72,14 @@ export const ui = {
     'home.download': 'Descargue CV',
     profile: 'Perfil',
     'profile.description':
-      'Desarrollador Full Stack altamente motivado con experiencia en JavaScript y PHP, especializado en la creación de aplicaciones web dinámicas y eficientes. Posee una amplia experiencia en desarrollo front-end y back-end, con un fuerte enfoque en el diseño centrado en el usuario, API RESTful y arquitectura escalable. Con ganas de aprovechar su experiencia en tecnologías web modernas para contribuir a un entorno dinámico e impulsado por la innovación.',
+      'Desarrollador Full Stack altamente motivado con experiencia en React y Strapi, especializado en la creación de aplicaciones web dinámicas y eficientes. Posee una amplia experiencia en desarrollo front-end y back-end, con un fuerte enfoque en el diseño centrado en el usuario, API RESTful y arquitectura escalable. Con ganas de aprovechar su experiencia en tecnologías web modernas para contribuir a un entorno dinámico e impulsado por la innovación.',
     education: 'Educación',
     'education.title': 'Ingeniería en Materiales Industriales',
     'education.college': 'Universidad Politécnica Territorial de Valencia',
     'education.academy': 'Udemy',
     'education.degree': 'Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL',
     'education.secondDegree': 'Bootcamp completo de SQL y bases de datos',
-    'education.thirdDegree': 'Next.js 15 y React: la guía completa',
+    'education.thirdDegree': 'Next.js y React: la guía completa',
     'education.fourthDegree': 'Higiene y Seguridad Industrial',
     'education.fifthDegree': 'Curso de NodeJS (GraphQL, MongoDB, + más)',
     'education.showLess': 'Mostrar menos',
@@ -95,12 +95,12 @@ export const ui = {
     'experience.title': 'Full Stack Developer',
     'experience.description':
       'En mi puesto anterior como desarrollador full stack, era responsable del diseño, desarrollo y mantenimiento de aplicaciones tanto del lado del cliente como del servidor, implementando soluciones sólidas para mejorar la funcionalidad y la experiencia del usuario. Mi trabajo implicaba utilizar tecnologías JavaScript y PHP para crear interfaces dinámicas y garantizar una integración perfecta con los servicios backend.',
-    'experience.title2': 'Desarrollador de Temas y Plugins de Wordpress',
+    'experience.title2': 'Desarrollador Full Stack en Vue y Laravel',
     'experience.description2':
-      'Durante mi etapa como desarrollador de WordPress especializado en temas y complementos, trabajé en un entorno dinámico en el que la personalización y el diseño centrado en el usuario eran esenciales. Desarrollé y personalicé temas y complementos para ofrecer soluciones personalizadas, garantizando una funcionalidad óptima y una experiencia de usuario atractiva.',
-    'experience.title3': 'Freelancer',
+      'Durante mi tiempo trabajando con Laravel, Vue y Tailwind CSS, formé parte de un entorno de desarrollo dinámico centrado en la creación de aplicaciones web responsivas, escalables e interactivas. Implementé la lógica del backend utilizando las robustas funciones de Laravel, a la vez que creé interfaces de usuario intuitivas y reactivas con Vue. Tailwind CSS me permitió crear diseños limpios, consistentes y altamente personalizables, garantizando un rendimiento óptimo y una experiencia de usuario fluida.',
+    'experience.title3': 'Full Stack Developer en MERN',
     'experience.description3':
-      'Como desarrollador independiente full stack, he trabajado con una variedad de tecnologías, incluidas React, Astro, Next.js, Node con Express y WordPress, para brindar soluciones personalizadas para diversas necesidades de los clientes. Mis proyectos abarcaron desde la creación de páginas de destino dinámicas hasta el desarrollo de sistemas backend sólidos, cada uno centrado en un código limpio y escalable y una experiencia de usuario intuitiva.',
+      'Durante mi experiencia trabajando con el stack MERN, TypeScript y Redux, contribuí al desarrollo de aplicaciones full stack con un fuerte enfoque en la seguridad de tipos, la mantenibilidad y el rendimiento. Construí APIs escalables con Node.js y Express, desarrollé interfaces dinámicas en el frontend utilizando React con Redux para la gestión del estado, y aseguré la confiabilidad del proceso mediante flujos de trabajo completos gestionados a través de Azure DevOps. Esta configuración permitió una integración y entrega continuas, una colaboración eficiente en equipo y la entrega de soluciones sólidas y listas para producción.',
     referenses: 'Referensias',
     'referenses.title': 'Desarrollador Web',
     'referenses.title2': 'Ingeniero en Electrónica',
