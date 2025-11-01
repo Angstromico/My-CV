@@ -27,7 +27,7 @@ const Header = ({ linksInfo }: HeaderInfo) => {
     <header className='l-header' id='header'>
       <nav className='nav bd-container'>
         <button onClick={() => scrollToElement('home')} className='nav__logo'>
-          Danye
+          Manuel
           <BoxIcon name='home' />
         </button>
         <div
