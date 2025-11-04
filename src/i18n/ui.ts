@@ -23,12 +23,14 @@ export const ui = {
     education: 'Education',
     'education.title': 'Industrial Materials Engineering',
     'education.college': 'Territorial Polytechnic University of Valencia',
-    'education.academy': "Udemy",
-    'education.degree': 'Full Web Development with HTML5, CSS3, JS AJAX PHP and MySQL',
+    'education.academy': 'Udemy',
+    'education.degree':
+      'Full Web Development with HTML5, CSS3, JS AJAX PHP and MySQL',
     'education.secondDegree': 'Complete SQL and Databases Bootcamp',
     'education.thirdDegree': 'Warehouse and Inventory Control',
     'education.fourthDegree': 'Next.js & React - The Complete Guide',
-    'education.fifthDegree': 'Complete NodeJS Developer (GraphQL, MongoDB, + more)',
+    'education.fifthDegree':
+      'Complete NodeJS Developer (GraphQL, MongoDB, + more)',
     'education.showLess': 'Show Less',
     'education.showMore': 'Show More',
     skills: 'Skills',
@@ -59,6 +61,16 @@ export const ui = {
     'interests.name4': 'Fitness',
     'interests.name5': 'Celebrations',
     description: 'Manuel Morales curriculum page',
+    projects: 'Projects',
+    'projects.title1': 'Mia Femtech™',
+    'projects.description1':
+      'Website created in Nuxt for the company Establishment Lab.',
+    'projects.title2': 'Velzia Sig Admin Page',
+    'projects.description2':
+      "Web application built in MERN for the management of Velzia Group's business transactions",
+    'projects.title3': 'Motiva Image',
+    'projects.description3':
+      'Web App made in Laravel with React for the management of information of surgeons and their clients of the Motiva brand in Costa Rica.',
   },
   es: {
     'nav.home': 'Home',
@@ -77,7 +89,8 @@ export const ui = {
     'education.title': 'Ingeniería en Materiales Industriales',
     'education.college': 'Universidad Politécnica Territorial de Valencia',
     'education.academy': 'Udemy',
-    'education.degree': 'Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL',
+    'education.degree':
+      'Desarrollo Web Completo con HTML5, CSS3, JS AJAX PHP y MySQL',
     'education.secondDegree': 'Bootcamp completo de SQL y bases de datos',
     'education.thirdDegree': 'Next.js y React: la guía completa',
     'education.fourthDegree': 'Higiene y Seguridad Industrial',
@@ -112,5 +125,15 @@ export const ui = {
     'interests.name4': 'Ejercicio',
     'interests.name5': 'Celebraciones',
     description: 'Manuel Morales pagina curriculum',
+    projects: 'Proyectos',
+    'projects.title1': 'Mia Femtech™',
+    'projects.description1':
+      'Pagina Web creada en Nuxt para la empresa Establishment Lab',
+    'projects.title2': 'Velzia Sig Admin Page',
+    'projects.description2':
+      'Aplicación web desarrollada en MERN para la gestión de las transacciones comerciales del Grupo Velzia.',
+    'projects.title3': 'Motiva Image',
+    'projects.description3':
+      'Aplicación web desarrollada en Laravel con React para la gestión de la información de los cirujanos y sus clientes de la marca Motiva en Costa Rica.',
   },
 } as const
