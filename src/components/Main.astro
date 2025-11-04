@@ -28,7 +28,7 @@ import {
   References,
   Interests,
   ScrollTop,
-  ThemeBtn
+  ThemeBtn, Projects,
 } from './index'
 
 const {name, profession, download, profile, description, education, educationData, skillsTitle, showEducation, skills, experience, experiences, referenses, referensesInfo, interest, herInterests} = Astro.props
@@ -51,6 +51,8 @@ const {name, profession, download, profile, description, education, educationDat
       <Experience experience={experience} experiences={experiences} />
 
       <References referense={referenses} referensesInfo={referensesInfo} />
+
+      <Projects />
 
       <Interests client:visible interest={interest} herInterests={herInterests} />
   </div>

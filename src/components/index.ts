@@ -8,6 +8,7 @@ import References from './References.astro'
 import Interests from './Interests'
 import ScrollTop from './ScrollTop'
 import ThemeBtn from './ThemeBtn'
+import Projects from './Projects.astro'
 
 export {
   Home,
@@ -20,4 +21,5 @@ export {
   Interests,
   ScrollTop,
   ThemeBtn,
+  Projects,
 }

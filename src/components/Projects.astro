@@ -1,0 +1,93 @@
+---
+import { Picture } from 'astro:assets'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
+import Mia from '../assets/Mia.png'
+import Sig from '../assets/Sig.png'
+import Motiva from '../assets/Motiva.png'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const projects = [
+  {
+    title: t('projects.title1'),
+    description: t('projects.description1'),
+    image: Mia,
+    link: 'https://miafemtech.com/',
+  },
+  {
+    title: t('projects.title2'),
+    description: t('projects.description2'),
+    image: Sig,
+    link: 'https://sig.velzia.es/',
+  },
+  {
+    title: t('projects.title3'),
+    description: t('projects.description3'),
+    image: Motiva,
+    link: 'https://motiva.health/motivaImagine/',
+  },
+]
+---
+<section class="projects-section">
+  <h2 class="section-title">{t('projects')}</h2>
+  <div class="projects-grid">
+    {projects.map((project) => (
+      <a href={project.link} class="project-card" target="_blank" rel="noopener noreferrer">
+        <Picture src={project.image} alt={project.title} class="project-image" formats={['webp']} loading="lazy" />
+        <div class="project-content">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style scoped>
+.projects-section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-title {
+  margin-bottom: 2rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.project-content {
+  padding: 1.5rem;
+}
+.project-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.project-content p {
+  font-size: 0.95rem;
+  color: #555;
+}
+</style>
