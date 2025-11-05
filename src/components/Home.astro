@@ -2,11 +2,15 @@
 import { Image } from 'astro:assets'
 import BoxIcon from './BoxIcon'
 import DanPic from '../assets/manmanman.png'
+import { getLangFromUrl } from '../i18n/utils'
 interface Props {
   name: { name: string; lastName: string }
   profession: string
   download: string
 }
+
+const lang = getLangFromUrl(Astro.url)
+const link = lang === 'es' ? '/cvdanes.pdf' : '/cvdan.pdf'
 
 const { name, profession, download } = Astro.props
 ---
@@ -19,12 +23,12 @@ const { name, profession, download } = Astro.props
           </h1>
           <h3 class='home__profession'>{profession}</h3>
           <div class="downbtn">
-            <a download='' href='/cvdan.pdf' class='home__button-mobile relative'>
+            <a download='' href={link} class='home__button-mobile relative'>
               {download}
             </a>
           </div>
           <div class="deskdown">
-            <a download='' href='/cvdan.pdf' class='home__button-desk relative'>
+            <a download='' href={link} class='home__button-desk relative'>
               <BoxIcon name='download' classAlt='down' />
             </a>
           </div>
